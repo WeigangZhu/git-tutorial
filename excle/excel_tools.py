@@ -1,4 +1,4 @@
-#!python3
+﻿#!python3
 
 '''
 the file is about how to use python to deal with excel
@@ -163,7 +163,6 @@ Workbook(encoding='utf-8')。
 3 表的单元格默认是不可重复写的，如果有需要，在调用add_sheet()的时候指定参数cell_overwrite_ok=True即可。
 
 
-'''
 
 import xlwt
 
@@ -177,12 +176,12 @@ sheet.col(2).width = 4000
 
 book.save('test.xls')
 
-'''
+
 
 除了基本的写入数据之外，xlwt还可以改变单元格格式。上面的write方法允许接受一个XFStyle（意为eXcel File Style）类型的参数，放在最后的位置。easyxf()可以快速生成一个XFStyle对象。
 
 这里简单介绍一下其用法：
-'''
+
 
 import datetime, xlwt
 
@@ -214,7 +213,7 @@ sheet.row(0).write(4, datetime.date(2016,8,14), xlwt.easyxf(
     )
 )
 
-'''
+
 
 使用xlutils修改Excel
 通过xlrd.open_workbook()打开的Book对象是只读的，不能直接对其进行修改操作，而xlwt.Workbook()返回的Workbook对象虽然可写，但是写的时候只能从零写起，那如果要修改一个已经存在的Excel该怎么办呢？
