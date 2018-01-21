@@ -14,6 +14,9 @@ $$x=\frac{-\sigma\pm\sqrt{b^2-4ac}}{2a}$$
 &nbsp;//半角空格（英文）
 &emsp;//全角空格（中文）
 
+
+## 行尾用两个空格表示换行
+
 2.1 前言
 -------
 
@@ -33,6 +36,7 @@ $$x=\frac{-\sigma\pm\sqrt{b^2-4ac}}{2a}$$
 2. 智能农机上的网络特点可归纳为通讯距离短、子功能模块化较好、扩充性要求高、网络复杂度要求不高、可靠性要求高等。因此。考虑智能农机网络的特点将这些拓扑结构进行比较,可以看出总线型的结构是最适合车用网络体系的。
 3. 智能农机上的网络特点可归纳为通讯距离短、子功能模块化较好、扩充性要求高、网络复杂度要求不高、可靠性要求高等。因此。考虑智能农机网络的特点将这些拓扑结构进行比较,可以看出总线型的结构是最适合车用网络体系的。
 
+## 图片链接
 ![](https://i.imgur.com/7xQPeNr.png)
 
 ![](https://i.imgur.com/UrNWxVw.png)
@@ -47,10 +51,18 @@ $$x=\frac{-\sigma\pm\sqrt{b^2-4ac}}{2a}$$
 
 ![](https://i.imgur.com/ILfKNuf.png)
 
+## 注释
 [comment]: <> (This is a comment, it will not be included)
 [comment]: <> (in  the output file unless you use it in)
 [comment]: <> (a reference style link.)
 [//]: <> (This is also a comment.)
 [//]: # (This may be the most platform independent comment)
 
+## 相对路径，文件在本地存着
 ![the picture name](./1.png)
+
+## 生成表格，线框可能是透明的
+| name | age | life |
+| ---- | :-: | ---: |
+| Dean | 23 | live|
+| Dean | 23 | live|
