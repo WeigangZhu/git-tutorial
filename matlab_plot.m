@@ -9,13 +9,13 @@ CAN_LENGTH = [10000, 6700, 3300, 1300, 620, 530, 270, 130, 40]; % m
 font_size = 12; % 设置字体大小
 font_name = 'Times New Roman'; % 设置某个字体
 
-%% 创建图形，并设定大小
+%% 创建图形，并设定大小，颜色
 % CAN_LENGTH = CAN_LENGTH/1000
 f = figure(1);
 f.Units = 'centimeters'; % 设置图片距离度量单位
 % 还可以是pixel，inches等等
 
-f.Position = [5, 2, 16, 8]; % 前两个设置图片出现的位置，后两个设置图片像素大小
+f.Position = [5, 2, 16, 8]; % 前两个设置图片出现的位置，后两个设置图片大小
 f.Color = [0.95, 0.95, 0.95]; % 画布颜色，越大越白，最大为1
 % f.Visible = 'off'; % 当前图像是否显示
 
@@ -23,7 +23,7 @@ f.Color = [0.95, 0.95, 0.95]; % 画布颜色，越大越白，最大为1
 p1 = plot(CAN_LENGTH,CAN_SPEED*5, 'b--','LineWidth',2);
 hold on
 p2 = plot(CAN_LENGTH,CAN_SPEED, 'r-.','LineWidth',2);
-p3 = plot(CAN_LENGTH,CAN_SPEED*3, 'g','LineWidth',2);
+p3 = plot(CAN_LENGTH,CAN_SPEED*3, 'k','LineWidth',2);
 
 %% 设置图形属性
 % f.Children ==  f.CurrentAxes % 这两个等同
@@ -32,6 +32,8 @@ p3 = plot(CAN_LENGTH,CAN_SPEED*3, 'g','LineWidth',2);
 f.Children.FontSize = font_size;
 f.Children.FontName = font_name;
 fc = f.CurrentAxes; % 获得属性，等同于取个别名，推荐用这个
+fc.LineWidth = 0.5; % 设置图形界面边框、网格的线宽
+fc.Box = 'on'; % 打开图形外边框
 
 %% Label 属性
 f.Children.XLabel.String = '总线长度(m)'; % 设置xlabel
@@ -42,6 +44,7 @@ fc.YLabel.String =  '$speed(Kbps)$'; % 用latex解释的字体需要加$限定范围
 fc.YLabel.FontName = 'Fraktur';  % 花体字
 fc.YLabel.FontSize = font_size;
 fc.YLabel.Interpreter = 'latex'; % 用latex解释String
+fc.YScale = 'log'; % 通常为linear
 fcy = fc.YLabel;
 fcy.FontWeight = 'bold';
 fc.YLim = [0 6000];
@@ -56,7 +59,7 @@ L.FontName = font_name; % legend 字体
 % L.String = {'data1','data2','data3'}; % legend名称
 p2.HandleVisibility = 'off';% 某个数据是否选择显示legend
 
-% 表示图例的最佳位置
+% 表示图例的最佳位置，与L.Position功能类似
 L.Location = 'best';
 
  % legend位置，四个值都在0~1范围内，都以整个图片为比例
@@ -67,4 +70,13 @@ L.Position = [0.72 0.7837 0.15 0.1283];
 %% 网格属性
 fc.YGrid = 'off'; % Y轴网格关闭
 fc.XMinorGrid = 'on'; % 细网格
+fc.GridColor = [0.15 0.15 0.15];
+fc.GridLineStyle = '-';
+fc.GridAlpha = 0.1; % 调整网格线透明度
+fc.MinorGridColor = [0.1000 0.1000 0.1000];
 grid on % 打开所有网格
+
+%% 
+
+%% 自动保存图片
+saveas(f, 'f1.emf');
