@@ -12,10 +12,15 @@ font_name = 'Times New Roman'; % 设置某个字体
 %% 创建图形，并设定大小
 % CAN_LENGTH = CAN_LENGTH/1000
 f = figure(1);
-f.Position = [500, 500, 600, 300]; % 前两个设置图片出现的位置，后两个设置图片像素大小
+f.Units = 'centimeters'; % 设置图片距离度量单位
+% 还可以是pixel，inches等等
 
+f.Position = [5, 2, 16, 8]; % 前两个设置图片出现的位置，后两个设置图片像素大小
+f.Color = [0.95, 0.95, 0.95]; % 画布颜色，越大越白，最大为1
+% f.Visible = 'off'; % 当前图像是否显示
+
+%% 画图
 p1 = plot(CAN_LENGTH,CAN_SPEED*5, 'b--','LineWidth',2);
-
 hold on
 p2 = plot(CAN_LENGTH,CAN_SPEED, 'r-.','LineWidth',2);
 p3 = plot(CAN_LENGTH,CAN_SPEED*3, 'g','LineWidth',2);
