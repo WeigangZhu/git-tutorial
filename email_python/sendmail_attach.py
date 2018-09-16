@@ -10,7 +10,7 @@ import traceback
 
 # thirs parties service
 mail_host = "smtp.qq.com"  # set service
-mail_user = "2216859338@qq.com"  
+mail_user = "2216859338@qq.com"
 mail_pass = "oqzjvolpxudrdjge"
 
 
