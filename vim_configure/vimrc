@@ -1,0 +1,24 @@
+set nu
+set showcmd
+syntax on
+set ruler
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set hlsearch
+set incsearch
+set ignorecase
+set smartindent
+set tags=./tags;,tags
+set nocompatible
+set history=1000 
+set showmatch
+set encoding=utf-8 
+set expandtab 
+set noswapfile
+set cursorline
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+
+set cursorcolumn
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
