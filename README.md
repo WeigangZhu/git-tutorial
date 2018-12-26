@@ -1,6 +1,5 @@
-# Git tutorial
+# Tutorial that put in github
+
+This folder contains all difference tutorial for me
 
 
-  - feature-A
-  - fix-B
-  - feature-C
